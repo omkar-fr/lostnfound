@@ -1,0 +1,20 @@
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.uv/
+backend/.env
+backend/app.db
+
+# --- Node / Frontend ---
+node_modules/
+frontend/.env
+dist/
+build/
+.DS_Store
+
+# --- OS / IDE ---
+.vscode/
+.idea/
+*.swp
