@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import NullPool, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -8,7 +8,7 @@ DATABASE_URL = settings.DATABASE_URL
 if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
-engine = create_engine(DATABASE_URL, pool_pre_ping=True, pool_recycle=300,
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, pool_recycle=300, poolclass=NullPool,
                        
         connect_args={
             "sslmode":"require",
