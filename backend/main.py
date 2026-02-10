@@ -3,7 +3,7 @@ from database.connection import engine, Base
 from app.models import models
 
 
-Base.metadata.create_all(binf=engine)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Lost~n~Found",
