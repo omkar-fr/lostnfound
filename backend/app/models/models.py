@@ -43,6 +43,8 @@ class Claim(Base):
     description = Column(Text, nullable=False)  
     status = Column(String, default="pending")   
     created_at = Column(DateTime, default=datetime.utcnow)
+    founder_confirmed = Column(Boolean, default=False)
+    loser_confirmed = Column(Boolean, default=False)
     
 class AuditLog(Base):
     __tablename__ = "audit_logs"
